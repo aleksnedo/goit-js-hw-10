@@ -6,13 +6,12 @@ import { prewievCountriesMarkup, countryInfoMarkup } from './js/markup';
 import debounce from 'lodash.debounce';
 
 const DEBOUNCE_DELAY = 300;
+let inputValue = '';
 
 refs.inputRef.addEventListener(
   'input',
   debounce(onInputCountriesSearch, DEBOUNCE_DELAY)
 );
-
-let inputValue = '';
 
 function addPrewiewCountryMarkup(data) {
   const markup = data.map(prewievCountriesMarkup).join('');
